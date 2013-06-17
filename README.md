@@ -1,9 +1,6 @@
 Numpad (Sencha Touch Plugin)
 ======
 
-Numpad 
-
-
 Numpad plugin comes in handy when you want to avoid showing the full keyboard.
 
 Installation guide: http://www.screencast.com/t/vdkEd25Ek5Pt
