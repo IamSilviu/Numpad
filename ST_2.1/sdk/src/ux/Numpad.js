@@ -202,12 +202,16 @@ Ext.define('Ext.ux.Numpad',{
                 case 'zero' :
                     if(oldValue.length != 0){
                         newValue =  oldValue + '0';
+                    }else{
+                        newValue = 0;
                     }
 
                     break;
                 case 'zerozero' :
                     if(oldValue.length != 0){
                         newValue =  oldValue + '00';
+                    }else{
+                        newValue = 0;
                     }
 
                     break;
