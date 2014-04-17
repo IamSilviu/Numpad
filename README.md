@@ -44,7 +44,7 @@ xtype : 'numpadfield'
 Notes: 
 Supports all confings and methods from Ext.field.Text.
 
-***Configuration**
+***Configuration***
 
 - inherits Ext.field.Text configs
 - singleDot {Boolean} Default: true // allow multiple "." chars
