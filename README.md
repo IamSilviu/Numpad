@@ -33,17 +33,12 @@ press yes to overwrite ( no files will be replaced ).
 ###Quick usage:
 
 You can include numpadfield in your app.js 
-
 or you can use it in your component view like: 
-
 `requires : ['Ext.ux.numpadfield'] `
-
 and add it as an item with:
-
 `xtype : 'numpadfield'`
-
-Notes: 
-Supports all confings and methods from Ext.field.Text.
+***Notes: 
+Supports all confings and methods from Ext.field.Text.***
 
 ###Configuration
 - inherits Ext.field.Text configs
