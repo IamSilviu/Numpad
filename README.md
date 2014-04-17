@@ -3,7 +3,7 @@ Numpad (Sencha Touch Plugin)
 
 Numpad plugin comes in handy when you want to avoid showing the full keyboard.
 
-Installation guide: http://www.screencast.com/t/vdkEd25Ek5Pt
+Installation video guide: http://www.screencast.com/t/vdkEd25Ek5Pt
 
 Products: Sencha Touch 2.x
 
