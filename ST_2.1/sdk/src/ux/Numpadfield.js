@@ -130,7 +130,7 @@ Ext.define('Ext.ux.Numpadfield',{
      * Listener to the tap event of the mask element. 
      * Shows the internal Numpad component when the field has been tapped.
      */    
-    onMaskTap: function(){   console.log('here');
+    onMaskTap: function(){  
         if (this.getDisabled()) {
             return false;
         }
