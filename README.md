@@ -42,10 +42,10 @@ Supports all confings and methods from Ext.field.Text.***
 
 ###Configuration
 - inherits Ext.field.Text configs
-- singleDot {Boolean} Default: true // allow multiple "." chars
-- disableFloatValues {Boolean} default: false // Relpace "." button with "00"
+- `singleDot` {Boolean} Default: true // allow multiple "." chars
+- `disableFloatValues` {Boolean} default: false // Relpace "." button with "00"
 
 ###Skining
 - CSS skins can be found in extras folder and can be used as reference
-- SASS skins are found in resources/sass/_{skinName}. Usage: @import 'numpadDROID'
+- SASS skins are found in resources/sass/_{skinName}. Usage: `@import 'numpadDROID'`
   
