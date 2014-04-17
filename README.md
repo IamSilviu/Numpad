@@ -23,7 +23,7 @@ Installation
  2. SASS ( 2 files ) [ Optional ]
 
 
-###Quick install:
+####Quick install:
 	
 Copy the ST_2~ content folder and paste it in your solution 
 (make sure your Sencha Touch sdk is 2.0+) 
