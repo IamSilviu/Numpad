@@ -44,7 +44,7 @@ Supports all confings and methods from Ext.field.Text.***
 - `singleDot` {Boolean} Default: true // allow multiple "." chars
 - `disableFloatValues` {Boolean} default: false // Relpace "." button with "00"
 
-####Skining
+####Skinning
 - CSS skins can be found in extras folder and can be used as reference
 - SASS skins are found in resources/sass/_{skinName}. Usage: `@import 'numpadDROID'`
   
