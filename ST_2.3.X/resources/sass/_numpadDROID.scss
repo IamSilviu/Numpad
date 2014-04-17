@@ -1,0 +1,85 @@
+$numpad-bg-start: #1a1d1f;
+$numpad-bg-stop: #232628;
+
+$key-bg-start: #373b3f;
+$key-bg-stop: #474d53;
+
+$key-bg-press-start: #7c7d84;
+$key-bg-press-stop: #a8aab1;
+
+$key-border-color: #434348;
+$key-border-top-color: #797881;
+$key-box-shadow: #43444b;
+$key-color: #FFF;
+$key-shadow: #000;
+$key-text-size: 24px;
+$key-radius: 0px;
+
+$display-bg-start: #e7fcbb;
+$display-bg-stop: #bac6a2;
+
+
+.x-numpad
+.x-panel-inner{  
+    background-color: $numpad-bg-stop !important;
+    background: -webkit-linear-gradient(bottom, $numpad-bg-start 0%, $numpad-bg-stop 100%);
+}
+
+
+.x-numpad
+.x-button{  
+    border: 1px solid $key-border-color;
+    border-top-color: $key-border-top-color;
+    border-radius: $key-radius;
+    -webkit-border-radius: $key-radius;
+    -webkit-box-shadow: 0px 1px 3px $key-box-shadow;
+    background: -webkit-linear-gradient(bottom, $key-bg-start 0%, $key-bg-stop 100%);
+}
+.x-numpad 
+.x-button-icon.x-icon-mask{
+    background: #EEE !important;
+}
+
+.x-numpad
+.x-button
+span{
+    font-weight: normal;
+    color: $key-color;
+    text-shadow: 0px 1px $key-shadow;
+    font-size: $key-text-size;
+}
+.x-numpad
+.x-button:focus,
+.x-numpad
+.x-button-pressing{
+     background: -webkit-linear-gradient(bottom, $key-bg-press-start 0%, $key-bg-press-stop 100%) !important;
+
+}
+
+.x-numpad-display {
+     background-color: $display-bg-stop !important;
+     background: -webkit-linear-gradient(bottom, $display-bg-start 0%, $display-bg-stop 100%) !important;
+     border-bottom-right-radius: 0 !important;
+     border-bottom-left-radius: 0 !important;
+     border-top-left-radius: 0 !important;
+     border-top-right-radius: 0 !important; 
+     box-shadow: inset 0px 0px 3px #4B5042;
+}
+
+.x-numpad-display
+.x-input-text{
+    font-size: 25px;
+    min-height: 25px;
+    padding: 6px 10px;
+    text-align: right;
+    color: #4B5042 !important;
+    -webkit-text-fill-color: black !important;
+    border-radius: 0;
+}
+
+.x-numpad
+.x-form-fieldset .x-form-fieldset-inner{
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+}
