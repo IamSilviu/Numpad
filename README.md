@@ -15,7 +15,6 @@ Authors:
 
 Installation
 ======
-
  
 ####Numpad plugin is composed of two parts:
 
