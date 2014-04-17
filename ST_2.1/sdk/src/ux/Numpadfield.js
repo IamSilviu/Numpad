@@ -6,8 +6,8 @@
 |4| |5| |6| | |    @Outputs: Numeric only
 --- --- --- | |    @Authors: Silviu Durduc <iamsilviu@gmail.com> 
 --- --- --- | |              Sebastian Tomescu <sebastian.tomescu@gmail.com>
-|1| |2| |3| | |    @version: 1.0
---- --- --- | |
+|1| |2| |3| | |    @version: 1.0.1
+--- --- --- | |	   @Fix for IE 10+ mask support
 ------- --- | |
 |  0  | |.| |x|
 ------- --- ---
@@ -25,6 +25,7 @@ Ext.define('Ext.ux.Numpadfield',{
          * Holds the numpad component for reuse 
          */              
         numpad: false,
+        
         singleDot: true, 
         
         clearIcon: false,
@@ -43,7 +44,19 @@ Ext.define('Ext.ux.Numpadfield',{
 
     initialize: function() {
         this.callParent();
-
+		
+		/* 
+		 * IE draws the mask under the input field.
+		 * Do not make the mask 100% transparent or the onMaskTap event will not trigger 
+		 */ 
+		if(Ext.browser.name = 'IE'){
+			var mask = this.getComponent().mask;
+			mask.dom.style.background = 'white';
+			mask.dom.style.filter = 'alpha(opacity=0.1)';
+			mask.dom.style.opacity = '0.1';
+			mask.dom.style.zIndex = '1000';
+		}
+		
         this.getComponent().on({
             scope: this,
 
@@ -117,7 +130,7 @@ Ext.define('Ext.ux.Numpadfield',{
      * Listener to the tap event of the mask element. 
      * Shows the internal Numpad component when the field has been tapped.
      */    
-    onMaskTap: function(){ 
+    onMaskTap: function(){   console.log('here');
         if (this.getDisabled()) {
             return false;
         }
