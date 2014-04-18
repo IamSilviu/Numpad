@@ -46,5 +46,5 @@ Supports all confings and methods from Ext.field.Text.***
 
 ####Skinning
 - CSS skins can be found in extras folder and can be used as reference
-- SASS skins are found in resources/sass/_{skinName}. Usage: `@import 'numpadDROID'`
+- SASS skins are found in resources/sass/_{skinName}. Usage: `@include 'numpadDROID'`
   
