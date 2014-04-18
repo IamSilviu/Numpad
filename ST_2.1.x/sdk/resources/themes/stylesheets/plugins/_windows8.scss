@@ -1,16 +1,16 @@
-$numpad-bg-start: #DADDE1;
-$numpad-bg-stop: #F3F3F3;
+$numpad-bg-start: #000000;
+$numpad-bg-stop: #302F37;
 
 $key-bg-start: rgb(211,211,217);
 $key-bg-stop: rgb(237,237,239);
 
-$key-bg-press-start: #007AFF;
+$key-bg-press-start: #10A251;
 $key-bg-press-stop: #a8aab1;
 
 $key-border-color: #838486;
 $key-border-top-color: #797881;
 $key-box-shadow: #43444b;
-$key-color: #000;
+$key-color: #fff;
 $key-shadow: #efefef;
 $key-text-size: 24px;
 
@@ -23,10 +23,8 @@ $display-bg-stop: #bac6a2;
 }
 .x-numpad
 .x-button{  
-	border-top: 0;
-	border-left: 0;
-	border-right: 0;
-    border-bottom: 1px solid $key-border-color;
+	border: 0;
+	border-radius: 0;
     background: $numpad-bg-stop;
 }
 .x-numpad
@@ -52,7 +50,6 @@ span{
      border-bottom-left-radius: 0 !important;
      border-top-left-radius: 0 !important;
      border-top-right-radius: 0 !important; 
-     box-shadow: inset 0px 0px 3px #4B5042;
 }
 
 .x-numpad-display
