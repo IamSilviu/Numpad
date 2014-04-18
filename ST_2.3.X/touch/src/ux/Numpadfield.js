@@ -6,7 +6,7 @@
 |4| |5| |6| | |    @Outputs: Numeric only
 --- --- --- | |    @Authors: Silviu Durduc <iamsilviu@gmail.com> 
 --- --- --- | |              Sebastian Tomescu <sebastian.tomescu@gmail.com>
-|1| |2| |3| | |    @version: 1.0.1
+|1| |2| |3| | |    @version: 1.0.2
 --- --- --- | |	   @Fix for IE 10+ mask support
 ------- --- | |
 |  0  | |.| |x|
@@ -25,23 +25,27 @@ Ext.define('Ext.ux.Numpadfield',{
          * Holds the numpad component for reuse 
          */              
         numpad: false,
-        
-        singleDot: true, 
-        
+		
+		
+		/**
+		 * @public
+		 * Allow single or multiple dots. 
+		 */
+        singleDot: true,         	
+		
+		/**
+		 * @public
+		 * Hide the numpad field on route change
+		 */
+		hideOnRouteChange : false,	
+		
         clearIcon: false,
                 
         component: {
             useMask: true
         }
-        
     },
     
-    /**
-     * @public
-     * Allow single or multiple dots. 
-     */
-
-
     initialize: function() {
         this.callParent();
 		
@@ -55,6 +59,12 @@ Ext.define('Ext.ux.Numpadfield',{
 			mask.dom.style.filter = 'alpha(opacity=0.1)';
 			mask.dom.style.opacity = '0.1';
 			mask.dom.style.zIndex = '1000';
+		}
+		
+		if(this.getHideOnRouteChange()){
+			var cmp = this;
+			
+			window.addEventListener('hashchange',function(){cmp._numpad.hide();});
 		}
 		
         this.getComponent().on({
@@ -80,7 +90,7 @@ Ext.define('Ext.ux.Numpadfield',{
                 width: '100%',
                 height: 305,
                 disableFloatValues:  this.config.disableFloatValues,
-              
+				
                 defaults: {
                     xtype: 'button',
                     width: "23%",
@@ -89,7 +99,6 @@ Ext.define('Ext.ux.Numpadfield',{
                     margin: "3px 1%"
                 }
             });  
-            
             
             }else{
                 
@@ -112,9 +121,7 @@ Ext.define('Ext.ux.Numpadfield',{
                 
             });  
             
-            
            } // tablet visual 
-            
             
             Ext.Viewport.add(numpad);
             this._numpad = numpad;
@@ -130,7 +137,7 @@ Ext.define('Ext.ux.Numpadfield',{
      * Listener to the tap event of the mask element. 
      * Shows the internal Numpad component when the field has been tapped.
      */    
-    onMaskTap: function(){   console.log('here');
+    onMaskTap: function(){
         if (this.getDisabled()) {
             return false;
         }
