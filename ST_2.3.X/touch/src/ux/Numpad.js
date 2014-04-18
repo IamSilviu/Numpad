@@ -36,77 +36,77 @@ Ext.define('Ext.ux.Numpad',{
 		disableFloatValues : false,	
 		
         items: [   
-			{
-				xtype: 'formpanel',
-				hidden: Ext.os.is.Phone ? false : true,
-				margin: '6 1%',
-				width: '98%',
-				height: 43,
-				border: 0,
-				padding: 0,
-				scrollable: false,
-				items: [{
-					xtype: 'textfield',
-					name: 'inputValue',
-					value: '0',
-					cls: Ext.baseCSSPrefix + 'numpad-display',
-					disabled: true,
-					clearIcon: false
-				}]
-			},
+		{
+			xtype: 'formpanel',
+			hidden: Ext.os.is.Phone ? false : true,
+			margin: '6 1%',
+			width: '98%',
+			height: 43,
+			border: 0,
+			padding: 0,
+			scrollable: false,
+			items: [{
+				xtype: 'textfield',
+				name: 'inputValue',
+				value: '0',
+				cls: Ext.baseCSSPrefix + 'numpad-display',
+				disabled: true,
+				clearIcon: false
+			}]
+		},
 
-			{
-				text: '7',
-				data: 7
-			},
-			{
-				text: '8',
-				data: 8
-			},
-			{
-				text: '9',
-				data: 9
-			},
-			{
-				iconCls: 'arrow_left' ,
-				iconMask: true,                
-				data: 'del'
-			},
-			{
-				text: '4',
-				data: 4
-			},
-			{
-				text: '5',
-				data: 5
-			},
-			{
-				text: '6',
-				data: 6
-			},
-			{
-				text: 'ok',
-				data: 'done',
-				height: Ext.os.is.Phone ? 168 : 245,
-				style: 'float:right;'
-			},            
-			{
-				text: '1',
-				data: 1
-			},
-			{
-				text: '2',
-				data: 2
-			},
-			{
-				text: '3',
-				data: 3
-			},
-			{
-				text: '0',
-				data: 'zero',
-				width:  Ext.os.is.Phone ? '48%' : 170
-			}
+		{
+			text: '7',
+			data: 7
+		},
+		{
+			text: '8',
+			data: 8
+		},
+		{
+			text: '9',
+			data: 9
+		},
+		{
+			iconCls: 'arrow_left' ,
+			iconMask: true,                
+			data: 'del'
+		},
+		{
+			text: '4',
+			data: 4
+		},
+		{
+			text: '5',
+			data: 5
+		},
+		{
+			text: '6',
+			data: 6
+		},
+		{
+			text: 'ok',
+			data: 'done',
+			height: Ext.os.is.Phone ? 168 : 245,
+			style: 'float:right;'
+		},            
+		{
+			text: '1',
+			data: 1
+		},
+		{
+			text: '2',
+			data: 2
+		},
+		{
+			text: '3',
+			data: 3
+		},
+		{
+			text: '0',
+			data: 'zero',
+			width:  Ext.os.is.Phone ? '48%' : 170
+		}
         ]
     },
         
