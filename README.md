@@ -43,6 +43,7 @@ Supports all confings and methods from Ext.field.Text.***
 - inherits Ext.field.Text configs
 - `singleDot` {Boolean} default: true // allow multiple "." chars
 - `disableFloatValues` {Boolean} default: false // Relpace "." button with "00"
+- `hideOnRouteChange` {Boolean} default: false // Hides the numpad on browser navigation (like back button)
 
 ####Skinning
 - CSS skins can be found in extras folder and can be used as reference
