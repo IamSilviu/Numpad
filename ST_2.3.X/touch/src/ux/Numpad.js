@@ -11,7 +11,7 @@
 ------- --- | |
 |  0  | |.| |x|
 ------- --- ---
-*/
+*/ 
 
 Ext.define('Ext.ux.Numpad',{
     extend: 'Ext.Panel',
