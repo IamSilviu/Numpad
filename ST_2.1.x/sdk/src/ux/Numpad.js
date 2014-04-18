@@ -6,12 +6,12 @@
 |4| |5| |6| | |    @Outputs: Numeric only
 --- --- --- | |    @Authors: Silviu Durduc <iamsilviu@gmail.com> 
 --- --- --- | |              Sebastian Tomescu <sebastian.tomescu@gmail.com>
-|1| |2| |3| | |    @version: 1.0.2
+|1| |2| |3| | |    @version: 1.0.3
 --- --- --- | |    @Fix for Sencha Touch 2.1 and new property [disableFloatValues] made by Michał Hernas <michal@hernas.pl>
 ------- --- | |
 |  0  | |.| |x|
 ------- --- ---
-*/
+*/ 
 
 Ext.define('Ext.ux.Numpad',{
     extend: 'Ext.Panel',
@@ -36,77 +36,77 @@ Ext.define('Ext.ux.Numpad',{
 		disableFloatValues : false,	
 		
         items: [   
-			{
-				xtype: 'formpanel',
-				hidden: Ext.os.is.Phone ? false : true,
-				margin: '6 1%',
-				width: '98%',
-				height: 43,
-				border: 0,
-				padding: 0,
-				scrollable: false,
-				items: [{
-					xtype: 'textfield',
-					name: 'inputValue',
-					value: '0',
-					cls: Ext.baseCSSPrefix + 'numpad-display',
-					disabled: true,
-					clearIcon: false
-				}]
-			},
+		{
+			xtype: 'formpanel',
+			hidden: Ext.os.is.Phone ? false : true,
+			margin: '6 1%',
+			width: '98%',
+			height: 43,
+			border: 0,
+			padding: 0,
+			scrollable: false,
+			items: [{
+				xtype: 'textfield',
+				name: 'inputValue',
+				value: '0',
+				cls: Ext.baseCSSPrefix + 'numpad-display',
+				disabled: true,
+				clearIcon: false
+			}]
+		},
 
-			{
-				text: '7',
-				data: 7
-			},
-			{
-				text: '8',
-				data: 8
-			},
-			{
-				text: '9',
-				data: 9
-			},
-			{
-				iconCls: 'arrow_left' ,
-				iconMask: true,                
-				data: 'del'
-			},
-			{
-				text: '4',
-				data: 4
-			},
-			{
-				text: '5',
-				data: 5
-			},
-			{
-				text: '6',
-				data: 6
-			},
-			{
-				text: 'ok',
-				data: 'done',
-				height: Ext.os.is.Phone ? 168 : 245,
-				style: 'float:right;'
-			},            
-			{
-				text: '1',
-				data: 1
-			},
-			{
-				text: '2',
-				data: 2
-			},
-			{
-				text: '3',
-				data: 3
-			},
-			{
-				text: '0',
-				data: 'zero',
-				width:  Ext.os.is.Phone ? '48%' : 170
-			}
+		{
+			text: '7',
+			data: 7
+		},
+		{
+			text: '8',
+			data: 8
+		},
+		{
+			text: '9',
+			data: 9
+		},
+		{
+			iconCls: 'arrow_left' ,
+			iconMask: true,                
+			data: 'del'
+		},
+		{
+			text: '4',
+			data: 4
+		},
+		{
+			text: '5',
+			data: 5
+		},
+		{
+			text: '6',
+			data: 6
+		},
+		{
+			text: 'ok',
+			data: 'done',
+			height: Ext.os.is.Phone ? 168 : 245,
+			style: 'float:right;'
+		},            
+		{
+			text: '1',
+			data: 1
+		},
+		{
+			text: '2',
+			data: 2
+		},
+		{
+			text: '3',
+			data: 3
+		},
+		{
+			text: '0',
+			data: 'zero',
+			width:  Ext.os.is.Phone ? '48%' : 170
+		}
         ]
     },
         
@@ -127,8 +127,26 @@ Ext.define('Ext.ux.Numpad',{
         }
 
         this.applyInstructions(this.getItems());
+		
+		this.on({
+			scope : this,
+			hide: 'deconstruct'
+		});
     },
-    
+	
+	/*
+	 * @event
+	 * Destory the numpad modal to clean the memory
+	 */
+    deconstruct: function(){
+		this.config.numfield._numpad = false;
+		this.un({
+			scope : this,
+			hide: 'deconstruct'
+		});
+		this.destroy();
+	},
+	
     applyInstructions: function(keys){
         var me = this;
         for(var i = 0; i < keys.getCount(); i++ ){
@@ -139,6 +157,7 @@ Ext.define('Ext.ux.Numpad',{
             }
         }
     },
+	
     /**
      * @private
      * Listener to the tap event of the key button. 
@@ -227,8 +246,6 @@ Ext.define('Ext.ux.Numpad',{
                         newValue = oldValue;
                     }
                     
-                    me.getParent().hide();
-                    
                     break;
             }
             
@@ -238,5 +255,10 @@ Ext.define('Ext.ux.Numpad',{
         
         me.getParent().getAt(0).setValues({ inputValue : newValue });
         numfield.setValue(newValue);
+		
+		if(key == 'done'){			
+			me.getParent().hide();
+		}
     }
 }); // xtype numpad
+

@@ -6,7 +6,7 @@
 |4| |5| |6| | |    @Outputs: Numeric only
 --- --- --- | |    @Authors: Silviu Durduc <iamsilviu@gmail.com> 
 --- --- --- | |              Sebastian Tomescu <sebastian.tomescu@gmail.com>
-|1| |2| |3| | |    @version: 1.0.2
+|1| |2| |3| | |    @version: 1.0.3
 --- --- --- | |    @Fix for Sencha Touch 2.1 and new property [disableFloatValues] made by Michał Hernas <michal@hernas.pl>
 ------- --- | |
 |  0  | |.| |x|
@@ -127,8 +127,26 @@ Ext.define('Ext.ux.Numpad',{
         }
 
         this.applyInstructions(this.getItems());
+		
+		this.on({
+			scope : this,
+			hide: 'deconstruct'
+		});
     },
-    
+	
+	/*
+	 * @event
+	 * Destory the numpad modal to clean the memory
+	 */
+    deconstruct: function(){
+		this.config.numfield._numpad = false;
+		this.un({
+			scope : this,
+			hide: 'deconstruct'
+		});
+		this.destroy();
+	},
+	
     applyInstructions: function(keys){
         var me = this;
         for(var i = 0; i < keys.getCount(); i++ ){
@@ -139,6 +157,7 @@ Ext.define('Ext.ux.Numpad',{
             }
         }
     },
+	
     /**
      * @private
      * Listener to the tap event of the key button. 
@@ -227,8 +246,6 @@ Ext.define('Ext.ux.Numpad',{
                         newValue = oldValue;
                     }
                     
-                    me.getParent().hide();
-                    
                     break;
             }
             
@@ -238,5 +255,10 @@ Ext.define('Ext.ux.Numpad',{
         
         me.getParent().getAt(0).setValues({ inputValue : newValue });
         numfield.setValue(newValue);
+		
+		if(key == 'done'){			
+			me.getParent().hide();
+		}
     }
 }); // xtype numpad
+

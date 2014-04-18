@@ -6,7 +6,7 @@
 |4| |5| |6| | |    @Outputs: Numeric only
 --- --- --- | |    @Authors: Silviu Durduc <iamsilviu@gmail.com> 
 --- --- --- | |              Sebastian Tomescu <sebastian.tomescu@gmail.com>
-|1| |2| |3| | |    @version: 1.0.2
+|1| |2| |3| | |    @version: 1.0.3
 --- --- --- | |	   @Fix for IE 10+ mask support
 ------- --- | |
 |  0  | |.| |x|
@@ -62,8 +62,7 @@ Ext.define('Ext.ux.Numpadfield',{
 	}
 	
 	if(this.getHideOnRouteChange()){
-		var cmp = this;
-		
+		var cmp = this;		
 		window.removeEventListener('hashchange',function(){cmp._numpad.hide();});
 		window.addEventListener('hashchange',function(){cmp._numpad.hide();});
 	}
