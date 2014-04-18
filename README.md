@@ -18,15 +18,15 @@ Installation
  
 ####Numpad plugin is composed of two parts:
 
- 1. JavaScript ( 2 files ) [ Required ]
- 2. SASS ( 2 files ) [ Optional ]
+ 1. JavaScript (2 files) [Required]
+ 2. SASS (2 files) [Optional]
 
 
 ####Quick install:
 	
 Copy the ST_2~ content folder and paste it in your solution 
 (make sure your Sencha Touch sdk is 2.0+) 
-press yes to overwrite ( no files will be replaced ).
+press yes to overwrite (no files will be replaced).
 
 
 ####Quick usage:
@@ -41,7 +41,7 @@ Supports all confings and methods from Ext.field.Text.***
 
 ####Configuration
 - inherits Ext.field.Text configs
-- `singleDot` {Boolean} Default: true // allow multiple "." chars
+- `singleDot` {Boolean} default: true // allow multiple "." chars
 - `disableFloatValues` {Boolean} default: false // Relpace "." button with "00"
 
 ####Skinning
