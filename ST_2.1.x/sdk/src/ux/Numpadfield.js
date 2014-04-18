@@ -20,7 +20,7 @@ Ext.define('Ext.ux.Numpadfield',{
     requires : ['Ext.ux.Numpad'],    
     
     config: {
-        /**
+        /** 
          * @private
          * Holds the numpad component for reuse 
          */              
