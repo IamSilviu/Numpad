@@ -27,17 +27,17 @@ Ext.define('Ext.ux.Numpadfield',{
         numpad: false,
 		
 		
-		/**
-		 * @public
-		 * Allow single or multiple dots. 
-		 */
+	/**
+	 * @public
+	 * Allow single or multiple dots. 
+	 */
         singleDot: true,         	
 		
-		/**
-		 * @public
-		 * Hide the numpad field on route change
-		 */
-		hideOnRouteChange : false,	
+	/**
+	 * @public
+	 * Hide the numpad field on route change
+	 */
+	hideOnRouteChange : false,	
 		
         clearIcon: false,
                 
@@ -64,6 +64,7 @@ Ext.define('Ext.ux.Numpadfield',{
 	if(this.getHideOnRouteChange()){
 		var cmp = this;
 		
+		window.removeEventListener('hashchange',function(){cmp._numpad.hide();});
 		window.addEventListener('hashchange',function(){cmp._numpad.hide();});
 	}
 		

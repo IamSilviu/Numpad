@@ -64,6 +64,7 @@ Ext.define('Ext.ux.Numpadfield',{
 	if(this.getHideOnRouteChange()){
 		var cmp = this;
 		
+		window.removeEventListener('hashchange',function(){cmp._numpad.hide();});
 		window.addEventListener('hashchange',function(){cmp._numpad.hide();});
 	}
 		
