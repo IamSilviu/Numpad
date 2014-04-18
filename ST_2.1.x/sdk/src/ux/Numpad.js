@@ -6,7 +6,7 @@
 |4| |5| |6| | |    @Outputs: Numeric only
 --- --- --- | |    @Authors: Silviu Durduc <iamsilviu@gmail.com> 
 --- --- --- | |              Sebastian Tomescu <sebastian.tomescu@gmail.com>
-|1| |2| |3| | |    @version: 1.1
+|1| |2| |3| | |    @version: 1.0.1
 --- --- --- | |    @Fix for Sencha Touch 2.1 and new property [disableFloatValues] made by Michał Hernas <michal@hernas.pl>
 ------- --- | |
 |  0  | |.| |x|
