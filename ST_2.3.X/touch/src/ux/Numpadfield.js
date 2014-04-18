@@ -27,17 +27,17 @@ Ext.define('Ext.ux.Numpadfield',{
         numpad: false,
 		
 		
-		/**
-		 * @public
-		 * Allow single or multiple dots. 
-		 */
+	/**
+	 * @public
+	 * Allow single or multiple dots. 
+	 */
         singleDot: true,         	
 		
-		/**
-		 * @public
-		 * Hide the numpad field on route change
-		 */
-		hideOnRouteChange : false,	
+	/**
+	 * @public
+	 * Hide the numpad field on route change
+	 */
+	hideOnRouteChange : false,	
 		
         clearIcon: false,
                 
@@ -49,23 +49,23 @@ Ext.define('Ext.ux.Numpadfield',{
     initialize: function() {
         this.callParent();
 		
-		/* 
-		 * IE draws the mask under the input field.
-		 * Do not make the mask 100% transparent or the onMaskTap event will not trigger 
-		 */ 
-		if(Ext.browser.name = 'IE'){
-			var mask = this.getComponent().mask;
-			mask.dom.style.background = 'white';
-			mask.dom.style.filter = 'alpha(opacity=0.1)';
-			mask.dom.style.opacity = '0.1';
-			mask.dom.style.zIndex = '1000';
-		}
+	/* 
+	 * IE draws the mask under the input field.
+	 * Do not make the mask 100% transparent or the onMaskTap event will not trigger 
+	 */ 
+	if(Ext.browser.name = 'IE'){
+		var mask = this.getComponent().mask;
+		mask.dom.style.background = 'white';
+		mask.dom.style.filter = 'alpha(opacity=0.1)';
+		mask.dom.style.opacity = '0.1';
+		mask.dom.style.zIndex = '1000';
+	}
+	
+	if(this.getHideOnRouteChange()){
+		var cmp = this;
 		
-		if(this.getHideOnRouteChange()){
-			var cmp = this;
-			
-			window.addEventListener('hashchange',function(){cmp._numpad.hide();});
-		}
+		window.addEventListener('hashchange',function(){cmp._numpad.hide();});
+	}
 		
         this.getComponent().on({
             scope: this,
